@@ -3,7 +3,8 @@ package demo
 object Test {
   def main(args: Array[String]): Unit = {
     println("Hello World!!")
-
+    Beginner.BeginnerMain() // GOTO HERE FIRST
+    return
     //Make a Function
     val multiplyTen = (x: Int) => x * 10
     val a :Int = multiplyTen(5)
@@ -68,6 +69,9 @@ object Test {
       println(a)
     }
 
+    val t = new Tester()
+    println(t.likePhone("07800711223"))
+
   }
 }
 
@@ -81,22 +85,12 @@ object IdFactory {
   }
 }
 
-//Traits are a bit like an interface but can have a default implementation (they dont have to)
-trait Greeter {
-  def greet(name: String): Unit =
-    println("Hello, " + name + "!")
-}
+
 //here my valet class implements the greeter trait, but overrides the greet method.
 class Valet extends Greeter {
   override def greet(name: String): Unit = println("My Overridden greeting is: Hello, " + name)
 }
 
-// https://docs.scala-lang.org/tour/traits.html
-
-trait Iterator[A] {
-  def hasNext: Boolean
-  def next(): A
-}
 
 class IntIterator(to: Int) extends Iterator[Int] {
   private var current = 0
@@ -108,4 +102,8 @@ class IntIterator(to: Int) extends Iterator[Int] {
       t
     } else 0
   }
+}
+
+class Tester() extends Phones[String] {
+  override def likePhone(x: String): Boolean = x.substring(0,2) == "07"
 }
