@@ -3,6 +3,16 @@ package demo
 object Beginner{
 
 
+  val d = Nil
+  val c = 3 :: d
+  val b = 2 :: c
+  val a = 1 :: b
+
+  println(a.tail)
+  println(b.tail)
+  println(c.tail)
+
+/*
   def summation(x: Int, y: Int ⇒ Int) = y(x)
 
   var incrementer = 3
@@ -18,7 +28,7 @@ println("Result2: " + result2)
   val a = List(1, 3, 5, 7)
   println(a.reduceLeft(_ + _)) //adds from left to right to return single number (16)
 
-
+*/
   def BeginnerMain(): Unit ={
     val idList : List[Int] = List(1,10,20,40,60,80,12,24,48,2,1,3,45,50,55)
     idList.foreach(f => println(f))

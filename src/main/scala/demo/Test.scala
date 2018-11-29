@@ -3,7 +3,12 @@ package demo
 object Test {
   def main(args: Array[String]): Unit = {
     println("Hello World!!")
-    Beginner.BeginnerMain() // GOTO HERE FIRST
+    val f = new FilesCF
+    f.ReadFile("/home/craig/Documents/test.txt")
+    f.ReadFile2("/home/craig/Documents/test.txt") //USES BUFFERED READER
+    f.ReadFile2("/home/craig/Documents/testLong.txt") //USES BUFFERED READER
+    //Beginner.BeginnerMain() // GOTO HERE FIRST
+
     return
     //Make a Function
     val multiplyTen = (x: Int) => x * 10
